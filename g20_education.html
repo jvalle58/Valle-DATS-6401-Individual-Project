@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <link rel="stylesheet" href="individual-project-style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>DATS 6401 - Individual Project - Joseph Valle (Education)</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {'packages': ['corechart','geochart','line']});
+        google.charts.setOnLoadCallback(drawAllSheets);
+
+        function drawAllSheets() {
+            drawSheetName('data', 'SELECT A,T,U,V,W,X, CP', educationSpendingResponseHandler);
+            drawSheetName('data', 'SELECT A,CR', educationPctAverageResponseHandler);
+            drawSheetName('data', 'SELECT DD,AR,AF,DB,H', education2013CapitaResponseHandler);
+            drawSheetName('data', 'SELECT DD,AS,AG,DB,I', education2014CapitaResponseHandler);
+            drawSheetName('data', 'SELECT DD,AT,AH,DB,J', education2015CapitaResponseHandler);
+            drawSheetName('data', 'SELECT DD,AU,AI,DB,K', education2016CapitaResponseHandler);
+            drawSheetName('data', 'SELECT DD,AV,AJ,DB,L', education2017CapitaResponseHandler);
+            drawSheetName('data', 'SELECT A,CL', educationFixedChangeResponseHandler);
+            drawSheetName('data', 'SELECT A,CN', educationPctChangeResponseHandler);
+        }
+
+        function drawSheetName(sheetName, query, responseHandler){
+            var queryString = encodeURIComponent(query);
+            var query = new google.visualization.Query(
+                'https://docs.google.com/spreadsheets/d/1Ig9G4lXtKgSdBzU0NNRTALwu5cebPNdkeYjgxh98U2M/gviz/tq?sheet='
+                + sheetName + '&headers=1&tq=' + queryString);
+                query.send(responseHandler);
+        } //drawSheetName
+
+        function checkError(response){
+            if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+            } //checkError
+        }
+
+        function educationSpendingResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            data.sort({column: 6, desc:true});
+            var options = {
+                title: 'Educational Spending in the G20 Forum from 2013 to 2017',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Country'},
+                seriesType: 'bars',
+                series: {5: {type:'line'}},
+                lineWidth: 3
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            formatter.format(data,3);
+            formatter.format(data,4);
+            formatter.format(data,5);
+            formatter.format(data,6);
+            var chart = new google.visualization.ComboChart(document.getElementById('education_spending_div'));
+            chart.draw(data, options);
+        } //educationSpendingResponseHandler
+
+        function educationPctAverageResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            data.sort({column: 1, desc: true});
+            var options = {
+                legend: 'none',
+                bars: 'horizontal',
+                title: 'Mean Educational Share of GDP from 2013 to 2017',
+                hAxis: {title: 'Share of GDP (%)'},
+                vAxis: {title: 'Country'},
+                colors: ['#eec900']
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.BarChart(document.getElementById('education_avg_pct_div'));
+            chart.draw(data, options);    
+        } //educationPctAverageResponseHandler
+
+        function education2013CapitaResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending Per Capita vs. GDP Per Capita in 2013',
+                hAxis: {title: 'Educational Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('education2013_capita_div'));
+            chart.draw(data, options);
+        } //education2013CapitaResponse Handler
+
+        function education2014CapitaResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending Per Capita vs. GDP Per Capita in 2014',
+                hAxis: {title: 'Educational Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('education2014_capita_div'));
+            chart.draw(data, options);
+        } //education2014CapitaResponse Handler
+
+        function education2015CapitaResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending Per Capita vs. GDP Per Capita in 2015',
+                hAxis: {title: 'Educational Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('education2015_capita_div'));
+            chart.draw(data, options);
+        } //education2015CapitaResponse Handler
+
+        function education2016CapitaResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending Per Capita vs. GDP Per Capita in 2016',
+                hAxis: {title: 'Educational Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('education2016_capita_div'));
+            chart.draw(data, options);
+        } //education2016CapitaResponse Handler
+
+        function education2017CapitaResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending Per Capita vs. GDP Per Capita in 2017',
+                hAxis: {title: 'Educational Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('education2017_capita_div'));
+            chart.draw(data, options);
+        } //education2017CapitaResponse Handler
+
+        function educationFixedChangeResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#c2c2c2','#4d4d4d']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('education_fixed_change_div'));
+            chart.draw(data, options);
+        } //educationFixedChangeResponseHandler;
+
+        function educationPctChangeResponseHandler(response){
+            checkError(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['yellow','8b8b00']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('education_pct_change_div'));
+            chart.draw(data, options);
+        } //educationPctChangeResponseHandler;
+
+        </script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="logo_text">
+                    <h1><a href="g20_home.html"></a>The G20: A Military, Educational, and Healthcare Perspective</h1>
+                    <h3></h3>
+                    <h3>DATS 6401 | Joseph Valle</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="menubar">
+            <ul id="menu">
+                <li><a href="g20_home.html">Home</a></li>
+                <li><a href="g20_military.html">Military</a></li>
+                <li class="selected"><a href="g20_education.html">Education</a></li>
+                <li><a href="g20_healthcare.html">Healthcare</a></li>
+                <li><a href="g20_case_study.html">Case Study</a></li>
+                <li><a href="g20_conclusions.html">Conclusions</a></li>
+                <li><a href="g20_references.html">References</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <h1>The G20 Forum and Education from 2013 to 2017</h1>
+            <p>
+                Besides military spending, we can also study the G20 from an educational perspective.
+                In this context, education expenditures refer to any funds spent by a national government toward both public and private schools.
+                Given the varying degree between countries with respect to their level of central authority on managing education, the amount spent toward education may depend on the ability of individual precincts to shape their local educational standards.
+                This may especially be the case with regard to public schools, which in some nations may apply a single standard of essential subjects throughout their surrounding areas.
+                Educational spending may also be affected by what topics are taught to students, as some specialties may gain greater traction and prevalence in the labor force as ever-evolving economic trends present themselves to workers amid globalization.
+                These observations, however, should not imply that a rise in educational spending necessarily correlates with higher academic performance in a country.
+            </p>
+            <h2>Analyzing Educational Spending Annually and as a Share of GDP</h2>
+            <p>
+                To start, let's now examine each country's annual figures for educational spending as well as its mean share of GDP toward that sector over our time span.
+            </p>
+            <div id="education_spending_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="education_avg_pct_div" style="width: 880px; height:500px;"></div>
+            <p>
+                The first chart above demonstrates how the US and China spent the most on education in absolute terms compared to the other countries.
+                But when we rank the G20 in terms of mean share of GDP toward education, Brazil takes the top slot at 6.13%.
+                The US, in contrast, places sixth at just less than 5%.
+            </p>
+            <p>
+                This latter note further underscores how the relative size of an economy can significantly impact how much of its national budget is allocated toward sectors like education.
+                Under this sector, it also weakens the notion of a significant relationship between spending and share of GDP.
+                Similarly as before however, we can take our investigation a little bit further by accounting for population.
+                Do the trends with respect to GDP per capita and military spending per capita apply to education as well?
+            </p>
+            <h2>Relationship Between Educational Spending Per Capita and GDP Per Capita</h2>
+            <div id="education2013_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="education2014_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="education2015_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="education2016_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="education2017_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <p>
+                Compared with military spending per capita, there is an even stronger and positive correlation between education spending per capita and GDP per capita.
+                We can pick up yet again over our time span how the US eventually overtook Australia based on its GDP per capita.
+                Looking back at France, Germany, Italy, and the UK, they consistently spent more than $1,000 per capita with respect to education, further underlining how they allocated a greater portion of their respective GDPs toward that rather than their militaries.
+                China, on the other hand, spent less than $400 per capita on education every year from 2013 to 2017, owing to the effect of its significantly larger population.
+            </p>
+            <h2>Change in Absolute Educational Spending across the G20 Forum (2013 - 2017)</h2>
+            <div id="education_fixed_change_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <p>
+                In varying shades of gray, we can determine the changes in absolute educational spending among the countries in our list.
+                From what we can see, the only countries to increase their spending over our time span were the US, China, and South Korea.
+                Taking the former two together, these augmented their spending by almost 10 and 11 times, respectively, the amount as South Korea from 2013 to 2017. 
+            </p>
+            <h2>Change in Relative Educational Spending across the G20 Forum (2013 - 2017)</h2>
+            <div id="education_pct_change_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <p>
+                Based on this geographic chart, the darker the shade of yellow, the greater the relative change in educational spending from 2013 to 2017.
+                Looking at it from this angle, while China increased its spending at a faster rate than the other countries (28.01%), South Korea's rate (13.44%) actually exceeded the US's (10.85%).
+                We should also take note of Australia's shift in that sector over time.
+                Given that its educational spending per capita declined from more than $3,500 in 2013 to less than $2,800 in 2017, at more than 17% its relative educational spending declined the most out of all countries in our list.
+            </p>
+        </div>
+         
+        <div id="footer">
+            &copy; <script>var d = new Date(); document.write(d.getFullYear());</script> | Joseph Valle
+        </div>
+    </div>
+</body>
+
+</html>
