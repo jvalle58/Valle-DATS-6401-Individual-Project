@@ -89,3 +89,37 @@ In varying shades of gray, we can observe the changes in absolute educational sp
 ![image10](/images/image10.png)
 
 The darker the shade of yellow here, the greater the relative change in educational spending from 2013 to 2017. Looking at it from this angle, while China increased its spending at a faster rate than the other countries (28.01%), South Korea's rate (13.44%) actually exceeded the US's (10.85%). We should also take note of Australia's shift in that sector over time. Given that its educational spending per capita declined from more than $3,500 in 2013 to less than $2,800 in 2017, at more than 17% its relative educational spending declined the most out of all countries in our list.
+
+## The G20 Forum and Healthcare from 2013 to 2017
+
+Unlike military and educational spending, healthcare in many areas often constitutes a mandatory component of annual spending. Similarly as with education, the amount of authority a nation's government possesses on administering healthcare can determine how much priority it receives in budgeting. The influence of private-sector companies in insurance, pharmacology, and other related healthcare industries may also be considered.
+
+### Analyzing Healthcare Spending Annually and as a Share of GDP
+
+![image11](/images/image11.png)
+
+![image12](/images/image12.png)
+
+While the US and China again posted the highest average figures in healthcare spending for each year, the difference here is more significant than with military and educational spending. Based on the combo chart shown above, the US on average ($3,030.33 billion) spent almost six times the amount as China ($537.07 billion) on healthcare. This distinction becomes even more apparent when we analyze the countries' mean shares of GDP. In fact, more than the rest of the G20, the US spent a greater average portion of its GDP (16.68%) toward healthcare, while China's share represented the smallest (4.90%) out of our list. Hence, the US's mean share was calculated as almost four times the size of China's, despite the fact that the two possessed the world's largest economies over our timespan.
+
+As a separate inquiry, does this difference likewise hold when comparing the countries' GDPs per capita with the amounts they spent on healthcare per capita?
+
+### Relationship Between Healthcare Spending Per Capita and GDP Per Capita
+
+![image13](/images/image13.png)
+
+The bubble chart here demonstrates China, Mexico, and Russia each spending less than $1,000 on healthcare per capita in 2017, as was also the case over the rest of our timespan. This is an extension from the red bar chart shown above indicating that these countries reported the lowest mean shares of GDP toward healthcare. At the same time, we should note that Brazil did briefly spend more than $1,000 on healthcare per capita in 2014, but dropped back under that amount along with the other three. On a separate note, Australia's healthcare spending per capita dropped by almost a quarter from 2013 ($5,970.74) to 2016 ($4,597.70), before finishing at $4,973.52 in 2017. The US, in contrast, shifted rightward from about $8,600 in 2013 to more than $10,200 in 2017. Based on these observations, we can deduce there is somewhat of a stronger relationship between the mean share of GDP toward healthcare in a country and its spending per capita within that sector compared to military and educational spending.
+
+### Change in Absolute Healthcare Spending across the G20 Forum (2013 - 2017)
+
+![image14](/images/image14.png)
+
+Of the countries included in this presentation, four posted a rise in absolute healthcare spending between 2013 and 2017 - China, Germany, South Korea, and the US. The US's figure was especially significant in that it was more than three times ($598.01 billion) the amount as China's ($183.36 billion). We should also point out there is some discrepancy among the four regarding the relationship between their increases in healthcare spending and their average shares of GDP toward it. While the US and Germany respectively reported the highest and third-highest average shares, South Korea and China placed in the bottom four with respect to that variable.
+
+### Change in Relative Healthcare Spending across the G20 Forum (2013 - 2017)
+
+![image15](/images/image15.png)
+
+Although the US's healthcare spending rose more in absolute terms than China's, the latter's rise was actually greater in relative terms, at more than 40%. South Korea's increase (34.75%) likewise outpaced the US's (21.98%). Germany's rate on the other hand was significantly more muted, seeing its relative spending rise by just 1.62%.
+
+## Case Study: Comparing China and the United States
