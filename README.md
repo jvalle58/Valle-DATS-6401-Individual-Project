@@ -64,9 +64,9 @@ For this project, education expenditures refer to any funds spent by a national 
 
 ### Analyzing Educational Spending Annually and as a Share of GDP
 
-![image6](/images/image1.png)
+![image6](/images/image6.png)
 
-![image7](/images/image2.png)
+![image7](/images/image7.png)
 
 The first chart above demonstrates how the US and China spent the most on education in absolute terms compared to the other countries. But when we rank the G20 in terms of mean share of GDP toward education, Brazil takes the top slot at 6.13%. The US, in contrast, places sixth at just less than 5%.
 
