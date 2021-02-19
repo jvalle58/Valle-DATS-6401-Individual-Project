@@ -16,7 +16,7 @@ For a little background, let's report on the rates of GDP and population growth 
 
 ### Rate of GDP Growth across the G20 Forum (2013 - 2017)
 
-![image24](https://github.com/jvalle58/Valle-DATS-6401-Individual-Project/blob/main/images/image24.png)
+![image24](/images/image24.png)
 
 As shown by the green geographic chart, the majority of countries actually saw their economies decline over our timespan. However, the three outliers - China, South Korea, and the US - expanded at relatively high rates, at 28.63%, 18.46%, and 16.29%, respectively. Note as well how four European countries - France, Germany, Italy, and the UK - shrank at some level between 1% and 8.50% from 2013 to 2017.
 
