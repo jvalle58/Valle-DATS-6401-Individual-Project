@@ -126,7 +126,7 @@ Although the US's healthcare spending rose more in absolute terms than China's, 
 
 At this point of our visual presentation, we now turn to a special case study focusing on the two biggest spenders for each of the aforementioned categories - China and the US. Considering how these two countries possessed the largest economies in the world over our timespan, it should not come as a surprise that they likewise spent the most. However, we can examine them even further by isolating their figures from the other countries included in our data. In doing so, we can elucidate any intriguing intra-year trends with respect to their spending habits and economic compositions. From there, we will be able to make several instrumental predictions on what their future budgets may entail, while taking into account the latest national developments reported by the news media within both countries.
 
-## A Side-By-Side Examination of the Two Countries
+### A Side-By-Side Examination of the Two Countries
 
 To start, let us pivot back to GDP. Recall that China and the US reported greater GDPs than the other countries for each year, as well as higher rates of economic growth over our time span. But just how much did they grow in between years?
 
@@ -154,10 +154,54 @@ If we turn our case study toward an educational angle, one observation we can pi
 
 Compared to the other variables, the US's absolute figures in healthcare spending dwarfed China's at an even greater scale. Recall as well that China on average reported the smallest share of GDP toward healthcare of all the countries on our list, further underlining this gap. In fact, for each year it spent more than five times as much as China in that sector, especially in 2013. While the gap between the two is significantly larger under this category, when we look at the changes in healthcare spending between years, the gap is somewhat smaller from 2016 to 2017. Additionally, China's relative spending toward healthcare rose by more than 13% from 2016 to 2017, after declining in the previous years of our time span. The US's relative spending likewise dropped somewhat from 2014 to 2017. Regarding the latter, given its relatively high shares of GDP toward healthcare compared to China, at more than 16%, this observation further demonstrates how military spending there was prone to greater fluctuations between years.
 
-## Predictions
+### Predictions
 
 We should first consider how China over our timespan gradually closed the gap between it and the US with respect to military spending. Therefore, it's possible that the latter may augment its spending to a greater level in subsequent years to maintain that gap, owing to the impact of the trade war between both nations and the erosion of their relationship amid the spread of COVID-19. However, the size of the US's military budget will also depend on how much its foreign policy approach evolves as a result of the 2020 presidential election. Given these observations, it's unlikely that China will slow down its relative military spending any time soon. If the rate at which it spends increases to a scale that is large enough, its share of GDP toward defense may ultimately break 2% within the next ten years.
 
 On the question of education, there is less likely to be a major closing of the gap, given how the two nations were somewhat closer to each other with respect to their changes in absolute spending between years, and their relatively declining educational shares of GDP. Although globalization may play a role behind any spending rises within this sector, we should also account for COVID-19. Much of the economic ramifications from the virus that have drawn attention as of late revolve around education, particularly the transition from in-person to online learning. As there continues to be debates, especially in the US, on whether or not to open schools, the administration of online education will probably assume a greater portion of both China and the US's annual budgets. School districts with significant outbreaks or historically weaker academic performance may also draw further consideration.
 
 Not surprisingly, COVID-19 could also spur both nations to raise their relative healthcare spending, as this will become more critical for individuals who contract the virus. Besides the virus itself though, the effects of economic decline at home and abroad will continue to present other kinds of health problems. Such issues may include depression, anxiety, and stress, all of which have exacerbated since the virus's emergence. Thus, greater healthcare spending in the US and China will likely focus on expanding the resources necessary toward addressing the virus itself, including vaccination procedures, and helping patients with the aforementioned mental problems. As a consequence, while the US will likely maintain the top spot among the countries we have studied in terms of its mean share of GDP toward healthcare, China's share for that sector could continue rising somewhat steadily.
+
+## Conclusions
+
+When accounting for military, educational, and healthcare spending, national economic growth or decline alone cannot sufficiently explain movements within any of the sectors over time. In fact, a country may shift its spending from one sector to another in light of surrounding economic conditions, at home and abroad. Discretionary spending especially may decline amid recession, inclining a country to focus on mandatory funds.
+
+A country's level of spending within a sector does not necessarily correlate with the share of GDP toward that sector. This observation emphasizes how the size of a country's economy can affect how much it can afford to transfer funds from one sector to another. Additionally, it further delineates the distinction between absolute and relative spending. The latter figure may more accurately describe spending shifts over time by accounting for a national economy's size on a proportionate scale. This is especially the case with regard to healthcare spending. As we saw earlier, the US spent more in absolute terms than the other countries on healthcare each year, and by extension reported the greatest such shift between 2013 and 2017. It also posted the greatest mean share of GDP toward healthcare over our timespan. Yet, China almost doubled the US's figure in terms of its relative shift in healthcare spending. This happened despite the fact that the US spent more than five times the amount as China on healthcare each year.
+
+Similar disparities occurred with respect to military spending. While the US spent more on its military absolutely than the other countries each year, its funds actually declined from 2013 to 2015. Furthermore, it reported the greatest absolute decline from 2013 to 2017, despite maintaining the second-highest mean share of GDP. Regarding the latter observation, Russia posted the greatest mean share of GDP toward its military. However, partly on account of the fact that its economy shrank the most out of the countries included in this presentation, its relative military spending dropped the most from 2013 to 2017. China in contrast reported the greatest increases under both figures. Notably, it was one of only three countries, alongside Australia and South Korea, to augment its defense budget over time.
+
+When comparing the countries from an educational perspective, per capita spending in that sector possessed a stronger correlation with GDP per capita than the other sectors. The fact it was so closely related with GDP per capita is quite significant when considering the long-term ramifications this can present for innovation and labor advancement. Economic growth in the educational sector is especially beneficial for families as they can more easily access any necessary resources that help them advance more easily within the labor force, using the skills acquired through schooling. Although a rise in educational spending per capita may present wider opportunities within the labor market, we should not automatically assume this will improve academic performance. According to the 2018 Program for International Student Assessment (PISA), six countries outperformed the US on their average cumulative score of reading, mathematics, and science. This occurred despite the US being the biggest annual spender on education for each year, as well as spending the most on education per capita in 2016 and 2017. Hence, transfering funds toward certain specialties or improving individual school performance may be more economically beneficial for families than raising spending all across the board.
+
+This project was a tremendous first opportunity to get accustomed with Google API's visualization tools, and gain new insights about the G20's trends in military, educational, and healthcare spending from 2013 to 2017. References for this project are listed below.
+
+## References
+
+[Link to Google Sheets data](https://docs.google.com/spreadsheets/d/1Ig9G4lXtKgSdBzU0NNRTALwu5cebPNdkeYjgxh98U2M/edit#gid=1568021285)
+
+Current health expenditure (% of GDP) | Data. (n.d.). Retrieved January 29, 2021, from https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS.
+
+GDP (current US$) | Data. (n.d.). Retrieved January 29, 2021, from https://data.worldbank.org/indicator/NY.GDP.MKTP.CD.
+
+Government current expenditures: Education. (2020, November 4). Retrieved February 3, 2021, from https://fred.stlouisfed.org/series/G160291A027NBEA.
+
+How can I use the apply() function for a single column? (2020, November 2). Retrieved February 4, 2021, from https://stackoverflow.com/questions/34962104/how-can-i-use-the-apply-function-for-a-single-column.
+
+How to drop unnamed column in Pandas? 5 Steps Only. (n.d.). Retrieved February 4, 2021, from https://www.datasciencelearner.com/drop-unnamed-column-pandas/.
+
+How to Export Pandas DataFrame to an Excel File. (2020, July 1). Retrieved February 4, 2021, from https://datatofish.com/export-dataframe-to-excel/.
+
+List of G20 Members. (n.d.). Retrieved January 29, 2021, from https://www.worldatlas.com/articles/g20-members.html.
+
+Military expenditure (% of GDP) | Data. (n.d.). Retrieved January 29, 2021, from https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS.
+
+PISA 2018 Worldwide Ranking - average score of mathematics, science and reading. (n.d.). Retrieved February 17, 2021, from https://factsmaps.com/pisa-2018-worldwide-ranking-average-score-of-mathematics-science-reading/.
+
+Public spending on education as a share of gross domestic product (%). (n.d.). Retrieved January 30, 2021, from https://knoema.com/atlas/topics/Education/Expenditures-on-Education/Public-spending-on-education-as-a-share-of-GDP?action=export&gadget=tranking-container.
+
+Remove index name in pandas. (2018, February 16). Retrieved February 4, 2021, from https://stackoverflow.com/questions/29765548/remove-index-name-in-pandas.
+
+Schleicher, Andreas. (2018). PISA 2018: Insights and Interpretations. Program for International Student Advancement.
+
+https://www.oecd.org/pisa/PISA%202018%20Insights%20and%20Interpretations%20FINAL%20PDF.pdf.
+
+Textor, C. (2020, November 19). Public expenditure on education as a share of gross domestic product (GDP) in China from 2009 to 2019. Retrieved January 30, 2021, from https://www.statista.com/statistics/1113951/china-public-education-expenditure-as-a-share-of-gdp/.
