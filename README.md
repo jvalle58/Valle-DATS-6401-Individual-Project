@@ -123,3 +123,41 @@ Of the countries included in this presentation, four posted a rise in absolute h
 Although the US's healthcare spending rose more in absolute terms than China's, the latter's rise was actually greater in relative terms, at more than 40%. South Korea's increase (34.75%) likewise outpaced the US's (21.98%). Germany's rate on the other hand was significantly more muted, seeing its relative spending rise by just 1.62%.
 
 ## Case Study: Comparing China and the United States
+
+At this point of our visual presentation, we now turn to a special case study focusing on the two biggest spenders for each of the aforementioned categories - China and the US. Considering how these two countries possessed the largest economies in the world over our timespan, it should not come as a surprise that they likewise spent the most. However, we can examine them even further by isolating their figures from the other countries included in our data. In doing so, we can elucidate any intriguing intra-year trends with respect to their spending habits and economic compositions. From there, we will be able to make several instrumental predictions on what their future budgets may entail, while taking into account the latest national developments reported by the news media within both countries.
+
+## A Side-By-Side Examination of the Two Countries
+
+To start, let us pivot back to GDP. Recall that China and the US reported greater GDPs than the other countries for each year, as well as higher rates of economic growth over our time span. But just how much did they grow in between years?
+
+![image16](/images/image16.png)
+
+![image17](/images/image17.png)
+
+Clearly, the US continues to exhibit a larger economy overall than China. But we should also note that China's economy between 2013 and 2014, as well from 2016 to 2017, actually expanded more than the US's in absolute figures. This observation becomes even notable when we analyze the rates at which both countries' GDPs are growing over time. In fact, as we can see from our area chart, China out-paced the US in terms of GDP growth in three of the four year transitions. This indicates that the gap between the size of both countries' economies is shrinking as time passes. However, does this relationship extend to when we study their trends in military spending?
+
+![image18](/images/image18.png)
+
+![image19](/images/image19.png)
+
+When comparing the two with respect to military spending, the four charts shown above imply an even greater shrinking of the gap with respect to that variable. Unlike the other countries we studied earlier, China was the only one to never lower its military spending between years, as can be noted by the charts on the right. This explains why its rate of spending substantially exceeded the rest in that category. Looking at it from another perspective, while the US spent more on its military in absolute terms than China, its military share of GDP declined from 4.05% to 3.31% over time, while China's stayed consistently at just less than 2% each year. However, the former's relative military spending did turn positive between 2015 and 2016, albeit by less than 1%. Note that in that same year transition, China's relative spending slowed to almost the same rate as the US's.
+
+![image20](/images/image20.png)
+
+![image21](/images/image21.png)
+
+If we turn our case study toward an educational angle, one observation we can pick up right away is that spending in that sector never dropped between years within both countries, in contrast to military spending. On that note though they have seen declines in their shares of GDP toward education. Yet again, China allocated a proportionately greater amount of funds toward education than the US for most of the year transitions. The time encompassing 2015 and 2016 is an intriguing outlier, as the US absolutely grew its educational spending at almost ten times the amount as China then. Similarly as with our inquiry on military spending, China's relative spending toward education exceeded the US's for a larger portion of time.
+
+![image22](/images/image22.png)
+
+![image23](/images/image23.png)
+
+Compared to the other variables, the US's absolute figures in healthcare spending dwarfed China's at an even greater scale. Recall as well that China on average reported the smallest share of GDP toward healthcare of all the countries on our list, further underlining this gap. In fact, for each year it spent more than five times as much as China in that sector, especially in 2013. While the gap between the two is significantly larger under this category, when we look at the changes in healthcare spending between years, the gap is somewhat smaller from 2016 to 2017. Additionally, China's relative spending toward healthcare rose by more than 13% from 2016 to 2017, after declining in the previous years of our time span. The US's relative spending likewise dropped somewhat from 2014 to 2017. Regarding the latter, given its relatively high shares of GDP toward healthcare compared to China, at more than 16%, this observation further demonstrates how military spending there was prone to greater fluctuations between years.
+
+## Predictions
+
+We should first consider how China over our timespan gradually closed the gap between it and the US with respect to military spending. Therefore, it's possible that the latter may augment its spending to a greater level in subsequent years to maintain that gap, owing to the impact of the trade war between both nations and the erosion of their relationship amid the spread of COVID-19. However, the size of the US's military budget will also depend on how much its foreign policy approach evolves as a result of the 2020 presidential election. Given these observations, it's unlikely that China will slow down its relative military spending any time soon. If the rate at which it spends increases to a scale that is large enough, its share of GDP toward defense may ultimately break 2% within the next ten years.
+
+On the question of education, there is less likely to be a major closing of the gap, given how the two nations were somewhat closer to each other with respect to their changes in absolute spending between years, and their relatively declining educational shares of GDP. Although globalization may play a role behind any spending rises within this sector, we should also account for COVID-19. Much of the economic ramifications from the virus that have drawn attention as of late revolve around education, particularly the transition from in-person to online learning. As there continues to be debates, especially in the US, on whether or not to open schools, the administration of online education will probably assume a greater portion of both China and the US's annual budgets. School districts with significant outbreaks or historically weaker academic performance may also draw further consideration.
+
+Not surprisingly, COVID-19 could also spur both nations to raise their relative healthcare spending, as this will become more critical for individuals who contract the virus. Besides the virus itself though, the effects of economic decline at home and abroad will continue to present other kinds of health problems. Such issues may include depression, anxiety, and stress, all of which have exacerbated since the virus's emergence. Thus, greater healthcare spending in the US and China will likely focus on expanding the resources necessary toward addressing the virus itself, including vaccination procedures, and helping patients with the aforementioned mental problems. As a consequence, while the US will likely maintain the top spot among the countries we have studied in terms of its mean share of GDP toward healthcare, China's share for that sector could continue rising somewhat steadily.
