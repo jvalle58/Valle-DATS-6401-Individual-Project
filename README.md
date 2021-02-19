@@ -178,11 +178,15 @@ This project was a tremendous first opportunity to get accustomed with Google AP
 
 [Link to Google Sheets data](https://docs.google.com/spreadsheets/d/1Ig9G4lXtKgSdBzU0NNRTALwu5cebPNdkeYjgxh98U2M/edit#gid=1568021285)
 
-Current health expenditure (% of GDP) | Data. (n.d.). Retrieved January 29, 2021, from https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS.
+[Link to China's educational data](https://www.statista.com/statistics/1113951/china-public-education-expenditure-as-a-share-of-gdp/)
 
-GDP (current US$) | Data. (n.d.). Retrieved January 29, 2021, from https://data.worldbank.org/indicator/NY.GDP.MKTP.CD.
+[Link to GDP data](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD)
 
-Government current expenditures: Education. (2020, November 4). Retrieved February 3, 2021, from https://fred.stlouisfed.org/series/G160291A027NBEA.
+[Link to healthcare data](https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS)
+
+[Link to other countries' educational data](https://knoema.com/atlas/topics/Education/Expenditures-on-Education/Public-spending-on-education-as-a-share-of-GDP?action=export&gadget=tranking-container)
+
+[Link to the US's educational data](https://fred.stlouisfed.org/series/G160291A027NBEA)
 
 How can I use the apply() function for a single column? (2020, November 2). Retrieved February 4, 2021, from https://stackoverflow.com/questions/34962104/how-can-i-use-the-apply-function-for-a-single-column.
 
@@ -192,16 +196,8 @@ How to Export Pandas DataFrame to an Excel File. (2020, July 1). Retrieved Febru
 
 List of G20 Members. (n.d.). Retrieved January 29, 2021, from https://www.worldatlas.com/articles/g20-members.html.
 
-Military expenditure (% of GDP) | Data. (n.d.). Retrieved January 29, 2021, from https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS.
-
 PISA 2018 Worldwide Ranking - average score of mathematics, science and reading. (n.d.). Retrieved February 17, 2021, from https://factsmaps.com/pisa-2018-worldwide-ranking-average-score-of-mathematics-science-reading/.
-
-Public spending on education as a share of gross domestic product (%). (n.d.). Retrieved January 30, 2021, from https://knoema.com/atlas/topics/Education/Expenditures-on-Education/Public-spending-on-education-as-a-share-of-GDP?action=export&gadget=tranking-container.
 
 Remove index name in pandas. (2018, February 16). Retrieved February 4, 2021, from https://stackoverflow.com/questions/29765548/remove-index-name-in-pandas.
 
-Schleicher, Andreas. (2018). PISA 2018: Insights and Interpretations. Program for International Student Advancement.
-
-https://www.oecd.org/pisa/PISA%202018%20Insights%20and%20Interpretations%20FINAL%20PDF.pdf.
-
-Textor, C. (2020, November 19). Public expenditure on education as a share of gross domestic product (GDP) in China from 2009 to 2019. Retrieved January 30, 2021, from https://www.statista.com/statistics/1113951/china-public-education-expenditure-as-a-share-of-gdp/.
+Schleicher, Andreas. (2018). PISA 2018: Insights and Interpretations. Program for International Student Advancement. https://www.oecd.org/pisa/PISA%202018%20Insights%20and%20Interpretations%20FINAL%20PDF.pdf.
