@@ -184,6 +184,8 @@ This project was a tremendous first opportunity to get accustomed with Google AP
 
 [Link to healthcare data](https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS)
 
+[Link to military data](https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS)
+
 [Link to other countries' educational data](https://knoema.com/atlas/topics/Education/Expenditures-on-Education/Public-spending-on-education-as-a-share-of-GDP?action=export&gadget=tranking-container)
 
 [Link to the US's educational data](https://fred.stlouisfed.org/series/G160291A027NBEA)
