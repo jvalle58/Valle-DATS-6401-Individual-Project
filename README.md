@@ -12,8 +12,6 @@ The Jupyter Notebook outlining the process of cleaning up the data prior to bein
 
 ## Background
 
-For a little background, let's report on the rates of GDP and population growth among the nations listed between 2013 and 2017.
-
 ### Rate of GDP Growth across the G20 Forum (2013 - 2017)
 
 ![image24](/images/image24.png)
