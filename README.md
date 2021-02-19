@@ -32,7 +32,7 @@ One of the conditions for a country to maintain a strong national security is of
 
 ### Analyzing Military Spending Annually and as a Share of GDP
 
-![image1}(/images/image1.png)
+![image1](/images/image1.png)
 
 ![image2](/images/image2.png)
 
