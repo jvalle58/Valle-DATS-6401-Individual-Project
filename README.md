@@ -32,8 +32,6 @@ One of the conditions for a country to maintain a strong national security is of
 
 ### Analyzing Military Spending Annually and as a Share of GDP
 
-![image1](/images/image1.png)
-
 ![image2](/images/image2.png)
 
 Right away, we can tell that the US and China spent the most, on average, on their militaries from 2013 to 2017, partly on account of the fact that the two possessed the largest economies in the world over that timespan. When we pivot toward the countries' mean military shares of GDP however, as shown in the orange bar chart, Russia emerged on top at 4.50%, almost a full percentage point ahead of the US. China on the other hand reported the fourth-highest average at 1.90%.
