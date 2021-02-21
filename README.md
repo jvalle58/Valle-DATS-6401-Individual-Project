@@ -8,7 +8,7 @@ Our data for GDP, population, and military and healthcare spending from 2013 to 
 
 Regarding the latter, as an important sidenote, Japan and South Korea's educational shares were missing in 2015 and 2017, respectively. Thus, during the data cleanup stage, these were adjusted by calculating the means for the other four years that already included figures for both countries. 
 
-The Jupyter Notebook outlining the process of cleaning up the data prior to being exported to Excel and Google Sheets is available for you to view.
+The Jupyter Notebook outlining the process of cleaning up the data prior to being exported to Excel and Google Sheets, as well as the indivudal HTML files, are available for you to view.
 
 ## Background
 
