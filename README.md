@@ -86,7 +86,7 @@ In varying shades of gray, we can observe the changes in absolute educational sp
 
 ![image10](/images/image10.png)
 
-The darker the shade of yellow here, the greater the relative change in educational spending from 2013 to 2017. Looking at it from this angle, while China increased its spending at a faster rate than the other countries (28.01%), South Korea's rate (13.44%) actually exceeded the US's (10.85%). We should also take note of Australia's shift in that sector over time. Given that its educational spending per capita declined from more than $3,500 in 2013 to less than $2,800 in 2017, at more than 17% its relative educational spending declined the most out of all countries in our list.
+The darker the shade of yellow here, the greater the change in relative educational spending from 2013 to 2017. Looking at it from this angle, while China increased its spending at a faster rate than the other countries (28.01%), South Korea's rate (13.44%) actually exceeded the US's (10.85%). We should also take note of Australia's shift in that sector over time. Given that its educational spending per capita declined from more than $3,500 in 2013 to less than $2,800 in 2017, at more than 17% its relative educational spending declined the most out of all countries in our list.
 
 ## The G20 Forum and Healthcare from 2013 to 2017
 
