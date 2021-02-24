@@ -347,7 +347,56 @@ Unlike military and educational spending, healthcare in many areas often constit
 
 ### Analyzing Healthcare Spending Annually and as a Share of GDP
 
+`function HealthcareSpendingVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 6, desc:true}); // The countries are sorted from highest to lowest average healthcare spending.
+            var options = {
+                title: 'Healthcare Spending in the G20 Forum from 2013 to 2017',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Country'},
+                seriesType: 'bars',
+                series: {5: {type:'line'}},
+                lineWidth: 3
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            formatter.format(data,3);
+            formatter.format(data,4);
+            formatter.format(data,5);
+            formatter.format(data,6);
+            var chart = new google.visualization.ComboChart(document.getElementById('healthcare_spending_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="healthcare_spending_div" style="width: 880px; height:500px;"></div>`
+
 ![image11](/images/image11.png)
+
+`function HealthcarePctAverageVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1, desc: true});
+            var options = {
+                legend: 'none',
+                bars: 'horizontal',
+                title: 'Mean Healthcare Share of GDP from 2013 to 2017',
+                hAxis: {title: 'Share of GDP (%)'},
+                vAxis: {title: 'Country'},
+                colors: ['#cd2626']
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.BarChart(document.getElementById('healthcare_avg_pct_div'));
+            chart.draw(data, options);    
+        } 
+
+`<div id="healthcare_avg_pct_div" style="width: 880px; height:500px;"></div>`
 
 ![image12](/images/image12.png)
 
@@ -357,17 +406,77 @@ As a separate inquiry, does this difference likewise hold when comparing the cou
 
 ### Relationship Between Healthcare Spending Per Capita and GDP Per Capita
 
+`function Healthcare2017CapitaVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Healthcare Spending Per Capita vs. GDP Per Capita in 2017',
+                hAxis: {title: 'Healthcare Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('healthcare2017_capita_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="healthcare2017_capita_div" style="width: 880px; height:500px;"></div>`
+
 ![image13](/images/image13.png)
 
 The bubble chart here demonstrates China, Mexico, and Russia each spending less than $1,000 on healthcare per capita in 2017, as was also the case over the rest of our timespan. This is an extension from the red bar chart shown above indicating that these countries reported the lowest mean shares of GDP toward healthcare. At the same time, we should note that Brazil did briefly spend more than $1,000 on healthcare per capita in 2014, but dropped back under that amount along with the other three. On a separate note, Australia's healthcare spending per capita dropped by almost a quarter from 2013 ($5,970.74) to 2016 ($4,597.70), before finishing at $4,973.52 in 2017. The US, in contrast, shifted rightward from about $8,600 in 2013 to more than $10,200 in 2017. Based on these observations, we can deduce there is somewhat of a stronger relationship between the mean share of GDP toward healthcare in a country and its spending per capita within that sector compared to military and educational spending.
 
 ### Change in Absolute Healthcare Spending across the G20 Forum (2013 - 2017)
 
+`function HealthcareFixedChangeVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#eeaeea','purple']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('healthcare_fixed_change_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="healthcare_fixed_change_div" style="width: 880px; height:500px;"></div>`
+
 ![image14](/images/image14.png)
 
 Of the countries included in this presentation, four posted a rise in absolute healthcare spending between 2013 and 2017 - China, Germany, South Korea, and the US. The US's figure was especially significant in that it was more than three times ($598.01 billion) the amount as China's ($183.36 billion). We should also point out there is some discrepancy among the four regarding the relationship between their increases in healthcare spending and their average shares of GDP toward it. While the US and Germany respectively reported the highest and third-highest average shares, South Korea and China placed in the bottom four with respect to that variable.
 
 ### Change in Relative Healthcare Spending across the G20 Forum (2013 - 2017)
+
+`function HealthcarePctChangeVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#ffb6c0','#cd0000']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('healthcare_pct_change_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="healthcare_pct_change_div" style="width: 880px; height:500px;"></div>`
 
 ![image15](/images/image15.png)
 
