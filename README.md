@@ -73,7 +73,7 @@ As shown by the green geographic chart, the majority of countries actually saw t
             `formatter.format(data,1);`
             
             `var chart = new google.visualization.GeoChart(document.getElementById('population_pct_change_div'));`
-            
+
             `chart.draw(data, options);`
         
         `}` 
@@ -91,48 +91,27 @@ One of the conditions for a country to maintain a strong national security is of
 ### Analyzing Military Spending Annually and as a Share of GDP
 
 `function MilitarySpendingVisualPick(response){`
-
             `ErrorWarning(response);`
-            
-            `var data = response.getDataTable();
-            
+            `var data = response.getDataTable();`
             `data.sort({column: 6, desc: true});`
-            
             `var options = {`
                 `title: 'Military Spending in the G20 Forum from 2013 to 2017',`
-                
                 `vAxis: {title: 'Spending ($ Billions)'},`
-                
                 `hAxis: {title: 'Country'},`
-                
                 `seriesType: 'bars',`
-                
                 `series: {5: {type:'line'}},`
-                
                 `lineWidth: 3`
-                
             `};`
-            
             `var formatter = new google.visualization.NumberFormat({`
-            
                 `fractionDigits: 2, prefix: '$', suffix: 'B'});`
-                
             `formatter.format(data,1);`
-            
             `formatter.format(data,2);`
-            
             `formatter.format(data,3);`
-            
             `formatter.format(data,4);`
-            
             `formatter.format(data,5);`
-            
             `formatter.format(data,6);`
-            
-            `var chart = new google.visualization.ComboChart(document.getElementById('military_spending_div'));
-            
+            `var chart = new google.visualization.ComboChart(document.getElementById('military_spending_div'));`
             `chart.draw(data, options);`
-        
         `}`
         
 `<div id="military_spending_div" style="width: 880px; height:500px;"></div>`
