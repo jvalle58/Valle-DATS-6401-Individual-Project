@@ -8,7 +8,7 @@ Our data for GDP, population, and military and healthcare spending from 2013 to 
 
 Regarding the latter, as an important sidenote, Japan and South Korea's educational shares were missing in 2015 and 2017, respectively. Thus, during the data cleanup stage, these were adjusted by calculating the means for the other four years that already included figures for both countries. 
 
-The Jupyter Notebook outlining the process of cleaning up the data prior to being exported to Excel and Google Sheets, as well as the indivudal HTML files, are available for you to view.
+The Jupyter Notebook outlining the process of cleaning up the data prior to being exported to Excel and Google Sheets, as well as the indivudal HTML files, are available for you to view.  Excerpts of the HTML code are also provided on this page.
 
 ## Background
 
@@ -16,31 +16,19 @@ The Jupyter Notebook outlining the process of cleaning up the data prior to bein
 
 `function GdpPctChangeVisualPick(response){`
 
-            `ErrorWarning(response);`
-            
-            `var data = response.getDataTable();`
-            
-            `data.sort({column: 1});`
-            
-            `var options = {`
-            
-                `colorAxis: {colors: ['#76ee00','#006400']},`
-                
-                `backgroundColor: '#add8e0'`
-                
-            `};`
-            
-            `var formatter = new google.visualization.NumberFormat({`
-            
-                `fractionDigits: 2, suffix: '%'});.`
-                
-            `formatter.format(data,1);`
-            
-            `var chart = new google.visualization.GeoChart(document.getElementById('gdp_pct_change_div'));`
-            
-            `chart.draw(data, options);`
-        
-        `}`  
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#76ee00','#006400']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'}); // This formats the data as percentages rounded to two decimal places.
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('gdp_pct_change_div'));
+            chart.draw(data, options);
+        } 
             
 `<div id="gdp_pct_change_div" style="width: 880px; height:500px;"></div>`
 
@@ -52,31 +40,19 @@ As shown by the green geographic chart, the majority of countries actually saw t
 
 `function PopulationPctChangeVisualPick(response){`
 
-            `ErrorWarning(response);`
-            
-            `var data = response.getDataTable();`
-            
-            `data.sort({column: 1});`
-            
-            `var options = {`
-            
-                `colorAxis: {colors: ['b0e2ff','#000080']},`
-                
-                `backgroundColor: '#add8e0'`
-                
-            `};`
-            
-            `var formatter = new google.visualization.NumberFormat({`
-            
-                `fractionDigits: 2, suffix: '%'});`
-                
-            `formatter.format(data,1);`
-            
-            `var chart = new google.visualization.GeoChart(document.getElementById('population_pct_change_div'));`
-
-            `chart.draw(data, options);`
-        
-        `}` 
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['b0e2ff','#000080']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('population_pct_change_div'));
+            chart.draw(data, options);
+        } 
         
 `<div id="population_pct_change_div" style="width: 880px; height:500px;"></div>`
 
@@ -91,28 +67,29 @@ One of the conditions for a country to maintain a strong national security is of
 ### Analyzing Military Spending Annually and as a Share of GDP
 
 `function MilitarySpendingVisualPick(response){`
-            `ErrorWarning(response);`
-            `var data = response.getDataTable();`
-            `data.sort({column: 6, desc: true});`
-            `var options = {`
-                `title: 'Military Spending in the G20 Forum from 2013 to 2017',`
-                `vAxis: {title: 'Spending ($ Billions)'},`
-                `hAxis: {title: 'Country'},`
-                `seriesType: 'bars',`
-                `series: {5: {type:'line'}},`
-                `lineWidth: 3`
-            `};`
-            `var formatter = new google.visualization.NumberFormat({`
-                `fractionDigits: 2, prefix: '$', suffix: 'B'});`
-            `formatter.format(data,1);`
-            `formatter.format(data,2);`
-            `formatter.format(data,3);`
-            `formatter.format(data,4);`
-            `formatter.format(data,5);`
-            `formatter.format(data,6);`
-            `var chart = new google.visualization.ComboChart(document.getElementById('military_spending_div'));`
-            `chart.draw(data, options);`
-        `}`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 6, desc: true});
+            var options = {
+                title: 'Military Spending in the G20 Forum from 2013 to 2017',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Country'},
+                seriesType: 'bars',
+                series: {5: {type:'line'}},
+                lineWidth: 3
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            formatter.format(data,3);
+            formatter.format(data,4);
+            formatter.format(data,5);
+            formatter.format(data,6);
+            var chart = new google.visualization.ComboChart(document.getElementById('military_spending_div'));
+            chart.draw(data, options);
+        }
         
 `<div id="military_spending_div" style="width: 880px; height:500px;"></div>`
 
@@ -120,39 +97,25 @@ One of the conditions for a country to maintain a strong national security is of
 
 `function MilitaryPctAverageVisualPick(response){`
 
-            `ErrorWarning(response);`
-            
-            `var data = response.getDataTable();`
-            
-            `data.sort({column: 1, desc: true});`
-            
-            `var options = {`
-                
-                `legend: 'none',`
-                
-                `bars: 'horizontal',`
-                
-                `title: 'Mean Military Share of GDP from 2013 to 2017',`
-                
-                `hAxis: {title: 'Share of GDP (%)'},`
-                
-                `vAxis: {title: 'Country'},`
-                
-                `colors: ['#fd6a00']`
-            
-            `};`
-            
-            `var formatter = new google.visualization.NumberFormat({`
-                
-                `fractionDigits: 2, suffix: '%'});`
-            
-            `formatter.format(data,1);`
-            
-            `var chart = new google.visualization.BarChart(document.getElementById('military_avg_pct_div'));`
-            
-            `chart.draw(data, options);`  
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1, desc: true});
+            var options = {
+                legend: 'none',
+                bars: 'horizontal',
+                title: 'Mean Military Share of GDP from 2013 to 2017',
+                hAxis: {title: 'Share of GDP (%)'},
+                vAxis: {title: 'Country'},
+                colors: ['#fd6a00']
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.BarChart(document.getElementById('military_avg_pct_div'));
+            chart.draw(data, options);
+        }
         
-        `}` 
+`<div id="military_avg_pct_div" style="width: 880px; height:500px;"></div>`
 
 ![image2](/images/image2.png)
 
@@ -162,17 +125,76 @@ Yet, national figures on military spending alone do not tell the whole picture o
 
 ### Relationship Between Military Spending Per Capita and GDP Per Capita
 
+`function Military2017CapitaVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending Per Capita vs. GDP Per Capita in 2017',
+                hAxis: {title: 'Military Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('military2017_capita_div'));
+            chart.draw(data, options);
+        } 
+        
+`<div id="military2017_capita_div" style="width: 880px; height:500px;"></div>`
+
 ![image3](/images/image3.png)
 
 The diameter of a bubble is affected by the extent of its corresponding country's population, while its color indicates its geographic region. In fact, China was the only country in the G20 to report a population of more than a billion from 2013 to 2017. Furthermore, a notable shift occurs in Australia over our timespan. While it reported a GDP per capita of almost $70,000 early on in 2013, that figure declined to just below $55,000 in 2017, despite its military spending per capita staying relatively stagnant. Additionally, outside of Russia, the other four European countries - France, Germany, Italy, and the UK - posted GDPs per capita of more than $30,000 annually. Yet, they also spent less than $1,000 on their militaries per capita every year. Based on this observation, they likely allocated a larger portion of their annual budgets toward other forms of discretionary spending.
 
 ### Change in Absolute Military Spending across the G20 Forum (2013 - 2017)
 
+`function MilitaryFixedChangeVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#f0e680','#8b8700']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('military_fixed_change_div'));
+            chart.draw(data, options);
+        } 
+`<div id="military_fixed_change_div" style="width: 880px; height:500px;"></div>`
+
 ![image4](/images/image4.png)
 
 The geographic chart shown above presents the changes in absolute military spending throughout each nation from 2013 to 2017. Only three countries, Australia, China, and South Korea, witnessed a rise in that category over our timespan. In China's case, it reported an increase of $48.59 billion, far surpassing the rest.
 
 ### Change in Relative Military Spending across the G20 Forum (2013 - 2017)
+
+`function MilitaryPctChangeVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#ffaa00','#b7410e']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('military_pct_change_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="military_pct_change_div" style="width: 880px; height:500px;"></div>`
 
 ![image5](/images/image5.png)
 
@@ -184,7 +206,56 @@ For this project, education expenditures refer to any funds spent by a national 
 
 ### Analyzing Educational Spending Annually and as a Share of GDP
 
+`function EducationSpendingVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 6, desc:true}); // The countries are sorted from highest to lowest average educational spending.
+            var options = {
+                title: 'Educational Spending in the G20 Forum from 2013 to 2017',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Country'},
+                seriesType: 'bars',
+                series: {5: {type:'line'}},
+                lineWidth: 3
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'}); 
+            formatter.format(data,1);
+            formatter.format(data,2);
+            formatter.format(data,3);
+            formatter.format(data,4);
+            formatter.format(data,5);
+            formatter.format(data,6);
+            var chart = new google.visualization.ComboChart(document.getElementById('education_spending_div'));
+            chart.draw(data, options);
+        }
+        
+`<div id="education_spending_div" style="width: 880px; height:500px;"></div>`
+
 ![image6](/images/image6.png)
+
+`function EducationPctAverageVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1, desc: true});
+            var options = {
+                legend: 'none',
+                bars: 'horizontal',
+                title: 'Mean Educational Share of GDP from 2013 to 2017',
+                hAxis: {title: 'Share of GDP (%)'},
+                vAxis: {title: 'Country'},
+                colors: ['#eec900']
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.BarChart(document.getElementById('education_avg_pct_div'));
+            chart.draw(data, options);    
+        } 
+        
+`<div id="education_avg_pct_div" style="width: 880px; height:500px;"></div>`
 
 ![image7](/images/image7.png)
 
@@ -194,17 +265,77 @@ This latter note further underscores how the relative size of an economy can sig
 
 ### Relationship Between Educational Spending Per Capita and GDP Per Capita
 
+`function Education2017CapitaVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending Per Capita vs. GDP Per Capita in 2017',
+                hAxis: {title: 'Educational Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('education2017_capita_div'));
+            chart.draw(data, options);
+        }
+        
+`<div id="education2017_capita_div" style="width: 880px; height:500px;"></div>`
+
 ![image8](/images/image8.png)
 
 Compared with military spending per capita, there is an even stronger and more positive correlation between educational spending per capita and GDP per capita. We can pick up over our timespan how the US eventually overtook Australia based on its educational spending per capita. Looking back at France, Germany, Italy, and the UK, they consistently spent more than $1,000 per capita with respect to education, further underlining how they allocated a greater portion of their respective GDPs toward that rather than their militaries. China, on the other hand, spent less than $400 per capita on education every year from 2013 to 2017, owing to the effect of its significantly larger population.  Similarly as earlier, the bubble charts for the other four years evaluating this relationship are available inside this GitHub repository.
 
 ### Change in Absolute Educational Spending across the G20 Forum (2013 - 2017)
 
+`function EducationFixedChangeVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#c2c2c2','#4d4d4d']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('education_fixed_change_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="education_fixed_change_div" style="width: 880px; height:500px;"></div>`
+
 ![image9](/images/image9.png)
 
 In varying shades of gray, we can observe the changes in absolute educational spending among the nations. The only ones to increase their spending over our timespan were the US, China, and South Korea. Taking the former two together, these augmented their spending by almost 10 and 11 times, respectively, the amount as South Korea from 2013 to 2017.
 
 ### Change in Relative Educational Spending across the G20 Forum (2013 - 2017)
+
+`function EducationPctChangeVisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['yellow','8b8b00']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('education_pct_change_div'));
+            chart.draw(data, options);
+        } 
+
+`<div id="education_pct_change_div" style="width: 880px; height:500px;"></div>`
 
 ![image10](/images/image10.png)
 
