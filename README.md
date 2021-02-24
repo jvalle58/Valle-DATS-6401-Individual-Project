@@ -70,17 +70,17 @@ One of the conditions for a country to maintain a strong national security is of
 
             ErrorWarning(response);
             var data = response.getDataTable();
-            data.sort({column: 6, desc: true});
+            data.sort({column: 6, desc: true}); // The countries are sorted from highest to lowest average military spending.
             var options = {
                 title: 'Military Spending in the G20 Forum from 2013 to 2017',
                 vAxis: {title: 'Spending ($ Billions)'},
                 hAxis: {title: 'Country'},
                 seriesType: 'bars',
-                series: {5: {type:'line'}},
+                series: {5: {type:'line'}}, // The combo chart's line connects the average figures over our timespan for each country together.
                 lineWidth: 3
             };
             var formatter = new google.visualization.NumberFormat({
-                fractionDigits: 2, prefix: '$', suffix: 'B'});
+                fractionDigits: 2, prefix: '$', suffix: 'B'}); // This formats the data as financial figures rounded to two decimal places.
             formatter.format(data,1);
             formatter.format(data,2);
             formatter.format(data,3);
@@ -490,17 +490,272 @@ At this point of our visual presentation, we now turn to a special case study fo
 
 To start, let us pivot back to GDP. Recall that China and the US reported greater GDPs than the other countries for each year, as well as higher rates of economic growth over our time span. But just how much did they grow in between years?
 
+`function CaseTest1VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Total GDP in China and the United States (2013 to 2017)',
+                vAxis: {title: 'Amount ($ Billions)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test1_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest2VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in GDP in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Amount ($ Billions)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test2_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest3VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Rate of GDP Growth in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Rate of Growth (%)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.AreaChart(document.getElementById('case_test3_div'));
+            chart.draw(data, options);
+        } 
+        
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test1_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test2_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
+            
+`<div id="case_test3_div" style="width: 880px; height:500px;"></div>`
+
 ![image16](/images/image16.png)
 
 ![image17](/images/image17.png)
 
 Clearly, the US's economy was overall bigger than China's throughout our timespan. But China's economy between 2013 and 2014, as well from 2016 to 2017, expanded more than the US's in absolute figures. This observation becomes even notable when we analyze the rates at which their GDPs grew over time. In fact, as we can see from our area chart, China out-paced the US in terms of GDP growth in three of the four year transitions. Hence, the gap between the size of both countries' economies shrank over time. However, does this relationship extend to when we study their trends in military spending?
 
+`function CaseTest4VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test4_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest5VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in Absolute Military Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test5_div'));
+            chart.draw(data, options);
+        } 
+
+`function CaseTest6VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Share of GDP in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Share of GDP (%)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3,
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.LineChart(document.getElementById('case_test6_div'));
+            chart.draw(data, options);
+        } 
+
+`function CaseTest7VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in Relative Military Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Amount (%)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3,
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.AreaChart(document.getElementById('case_test7_div'));
+            chart.draw(data, options);
+        } 
+
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test4_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test5_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
+            
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test6_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test7_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
+
 ![image18](/images/image18.png)
 
 ![image19](/images/image19.png)
 
 When comparing the two with respect to military spending, the four charts shown above imply an even greater shrinking of the gap with respect to that variable. Unlike the other countries we studied earlier, China was the only one to never lower its military spending between years, as can be noted by the charts on the right. This explains why its rate of spending substantially exceeded the rest in that category. Looking at it from another perspective, while the US spent more on its military in absolute terms than China, its military share of GDP declined from 4.05% to 3.31% over time, while China's stayed consistently at just less than 2% each year. However, the former's relative military spending did turn positive between 2015 and 2016, albeit by less than 1%. Note that in that same year transition, China's relative spending slowed to almost the same rate as the US's.
+
+`function CaseTest8VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test8_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest9VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in Absolute Educational Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test9_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest10VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Educational Share of GDP in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Share of GDP (%)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3,
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.LineChart(document.getElementById('case_test10_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest11VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in Relative Educational Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Amount (%)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3,
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.AreaChart(document.getElementById('case_test11_div'));
+            chart.draw(data, options);
+        } 
+
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test8_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test9_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
+            
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test10_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test11_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
 
 ![image20](/images/image20.png)
 
