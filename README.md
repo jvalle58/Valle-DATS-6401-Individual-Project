@@ -763,6 +763,100 @@ When comparing the two with respect to military spending, the four charts shown 
 
 If we turn our case study toward an educational angle, one observation we can pick up right away is that spending in that sector never turned negative between years within both countries, in contrast to military spending. On that note though they have seen declines in their shares of GDP toward education. Yet again, China allocated a proportionately greater amount of funds toward education than the US for most of the year transitions. The time encompassing 2015 and 2016 is an intriguing outlier, as the US absolutely grew its educational spending at almost ten times the amount as China then. Similarly as with our inquiry on military spending, China's relative spending toward education exceeded the US's for a larger portion of time.
 
+`function CaseTest12VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Healthcare Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test12_div'));
+            chart.draw(data, options);
+        } 
+        
+`function CaseTest13VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in Absolute Healthcare Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.ColumnChart(document.getElementById('case_test13_div'));
+            chart.draw(data, options);
+        } 
+
+`function CaseTest14VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Healthcare Share of GDP in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Share of GDP (%)'},
+                hAxis: {title: 'Year'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3,
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.LineChart(document.getElementById('case_test14_div'));
+            chart.draw(data, options);
+        } 
+
+`function CaseTest15VisualPick(response){`
+
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Change in Relative Healthcare Spending in China and the United States (2013 - 2017)',
+                vAxis: {title: 'Amount (%)'},
+                hAxis: {title: 'Year Transition'},
+                colors: ['#cd2626','#3a5fcd'],
+                lineWidth: 3,
+                legend: {position: 'bottom'}
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.AreaChart(document.getElementById('case_test15_div'));
+            chart.draw(data, options);
+        } 
+
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test12_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test13_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
+            
+`<table class="columns">`
+
+                <tr>
+                    <td><div id="case_test14_div" style="width: 440px; height:500px;"></div></td>
+                    <td><div id="case_test15_div" style="width: 440px; height:500px;"></div></td>
+                </tr>
+            </table>
+
 ![image22](/images/image22.png)
 
 ![image23](/images/image23.png)
