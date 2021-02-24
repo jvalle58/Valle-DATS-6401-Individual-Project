@@ -14,11 +14,71 @@ The Jupyter Notebook outlining the process of cleaning up the data prior to bein
 
 ### Rate of GDP Growth across the G20 Forum (2013 - 2017)
 
+`function GdpPctChangeVisualPick(response){`
+
+            `ErrorWarning(response);`
+            
+            `var data = response.getDataTable();`
+            
+            `data.sort({column: 1});`
+            
+            `var options = {`
+            
+                `colorAxis: {colors: ['#76ee00','#006400']},`
+                
+                `backgroundColor: '#add8e0'`
+                
+            `};`
+            
+            `var formatter = new google.visualization.NumberFormat({`
+            
+                `fractionDigits: 2, suffix: '%'});.`
+                
+            `formatter.format(data,1);`
+            
+            `var chart = new google.visualization.GeoChart(document.getElementById('gdp_pct_change_div'));`
+            
+            `chart.draw(data, options);`
+        
+        `}`  
+            
+`<div id="gdp_pct_change_div" style="width: 880px; height:500px;"></div>`
+
 ![image24](/images/image24.png)
 
 As shown by the green geographic chart, the majority of countries actually saw their economies decline over our timespan. However, the three outliers - China, South Korea, and the US - expanded at relatively high rates, at 28.63%, 18.46%, and 16.29%, respectively. Note as well how four European countries - France, Germany, Italy, and the UK - shrank at some level between 1% and 8.50% from 2013 to 2017.
 
 ### Rate of Population Growth across the G20 Forum (2013 - 2017)
+
+`function PopulationPctChangeVisualPick(response){`
+
+            `ErrorWarning(response);`
+            
+            `var data = response.getDataTable();`
+            
+            `data.sort({column: 1});`
+            
+            `var options = {`
+            
+                `colorAxis: {colors: ['b0e2ff','#000080']},`
+                
+                `backgroundColor: '#add8e0'`
+                
+            `};`
+            
+            `var formatter = new google.visualization.NumberFormat({`
+            
+                `fractionDigits: 2, suffix: '%'});`
+                
+            `formatter.format(data,1);`
+            
+            `var chart = new google.visualization.GeoChart(document.getElementById('population_pct_change_div'));`
+            
+            `chart.draw(data, options);`
+        
+        `}` 
+        
+`<div id="population_pct_change_div" style="width: 880px; height:500px;"></div>`
 
 ![image25](/images/image25.png)
 
@@ -30,7 +90,90 @@ One of the conditions for a country to maintain a strong national security is of
 
 ### Analyzing Military Spending Annually and as a Share of GDP
 
+`function MilitarySpendingVisualPick(response){`
+
+            `ErrorWarning(response);`
+            
+            `var data = response.getDataTable();
+            
+            `data.sort({column: 6, desc: true});`
+            
+            `var options = {`
+                `title: 'Military Spending in the G20 Forum from 2013 to 2017',`
+                
+                `vAxis: {title: 'Spending ($ Billions)'},`
+                
+                `hAxis: {title: 'Country'},`
+                
+                `seriesType: 'bars',`
+                
+                `series: {5: {type:'line'}},`
+                
+                `lineWidth: 3`
+                
+            `};`
+            
+            `var formatter = new google.visualization.NumberFormat({`
+            
+                `fractionDigits: 2, prefix: '$', suffix: 'B'});`
+                
+            `formatter.format(data,1);`
+            
+            `formatter.format(data,2);`
+            
+            `formatter.format(data,3);`
+            
+            `formatter.format(data,4);`
+            
+            `formatter.format(data,5);`
+            
+            `formatter.format(data,6);`
+            
+            `var chart = new google.visualization.ComboChart(document.getElementById('military_spending_div'));
+            
+            `chart.draw(data, options);`
+        
+        `}`
+        
+`<div id="military_spending_div" style="width: 880px; height:500px;"></div>`
+
 ![image1](/images/image1.png)
+
+`function MilitaryPctAverageVisualPick(response){`
+
+            `ErrorWarning(response);`
+            
+            `var data = response.getDataTable();`
+            
+            `data.sort({column: 1, desc: true});`
+            
+            `var options = {`
+                
+                `legend: 'none',`
+                
+                `bars: 'horizontal',`
+                
+                `title: 'Mean Military Share of GDP from 2013 to 2017',`
+                
+                `hAxis: {title: 'Share of GDP (%)'},`
+                
+                `vAxis: {title: 'Country'},`
+                
+                `colors: ['#fd6a00']`
+            
+            `};`
+            
+            `var formatter = new google.visualization.NumberFormat({`
+                
+                `fractionDigits: 2, suffix: '%'});`
+            
+            `formatter.format(data,1);`
+            
+            `var chart = new google.visualization.BarChart(document.getElementById('military_avg_pct_div'));`
+            
+            `chart.draw(data, options);`  
+        
+        `}` 
 
 ![image2](/images/image2.png)
 
