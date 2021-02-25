@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="individual-project-style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>DATS 6401 - Individual Project - Joseph Valle (Military)</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {'packages':['corechart','geochart']});
+        google.charts.setOnLoadCallback(GoogleDraw);
+
+        function GoogleDraw() {
+            Drawing('data', 'SELECT A,N,O,P,Q,R,CH', MilitarySpendingVisualPick);
+            Drawing('data', 'SELECT A,CJ', MilitaryPctAverageVisualPick);
+            Drawing('data', 'SELECT DD,AL,AF,DB,H', Military2013CapitaVisualPick);
+            Drawing('data', 'SELECT DD,AM,AG,DB,I', Military2014CapitaVisualPick);
+            Drawing('data', 'SELECT DD,AN,AH,DB,J', Military2015CapitaVisualPick);
+            Drawing('data', 'SELECT DD,AO,AI,DB,K', Military2016CapitaVisualPick);
+            Drawing('data', 'SELECT DD,AP,AJ,DB,L', Military2017CapitaVisualPick);
+            Drawing('data', 'SELECT A,CD', MilitaryFixedChangeVisualPick);
+            Drawing('data', 'SELECT A,CF', MilitaryPctChangeVisualPick);
+        }
+
+        function Drawing(sheet, query, VisualPick){
+            var QueryString = encodeURIComponent(query);
+            var query = new google.visualization.Query(
+                'https://docs.google.com/spreadsheets/d/1Ig9G4lXtKgSdBzU0NNRTALwu5cebPNdkeYjgxh98U2M/gviz/tq?sheet='
+                + sheet + '&headers=1&tq=' + QueryString);
+                query.send(VisualPick);
+            }
+        // Drawing
+
+        function ErrorWarning(response){
+            if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+            }
+        } 
+        // ErrorWarning
+
+        function MilitarySpendingVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 6, desc: true}); // The countries are sorted from highest to lowest average military spending.
+            var options = {
+                title: 'Military Spending in the G20 Forum from 2013 to 2017',
+                vAxis: {title: 'Spending ($ Billions)'},
+                hAxis: {title: 'Country'},
+                seriesType: 'bars',
+                series: {5: {type:'line'}}, // The combo chart's line connects the average figures over our timespan for each country together.
+                lineWidth: 3
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'}); // This formats the data as financial figures rounded to two decimal places.
+            formatter.format(data,1);
+            formatter.format(data,2);
+            formatter.format(data,3);
+            formatter.format(data,4);
+            formatter.format(data,5);
+            formatter.format(data,6);
+            var chart = new google.visualization.ComboChart(document.getElementById('military_spending_div'));
+            chart.draw(data, options);
+        } 
+        // MilitarySpendingVisualPick refers to absolute military spending between the countries over each year.
+
+        function MilitaryPctAverageVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1, desc: true});
+            var options = {
+                legend: 'none',
+                bars: 'horizontal',
+                title: 'Mean Military Share of GDP from 2013 to 2017',
+                hAxis: {title: 'Share of GDP (%)'},
+                vAxis: {title: 'Country'},
+                colors: ['#fd6a00']
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.BarChart(document.getElementById('military_avg_pct_div'));
+            chart.draw(data, options);    
+        } 
+        // MilitaryPctAverageVisualPick refers to the mean share of GDP allocated toward military spending from 2013 to 2017.
+    
+        function Military2013CapitaVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending Per Capita vs. GDP Per Capita in 2013',
+                hAxis: {title: 'Military Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('military2013_capita_div'));
+            chart.draw(data, options);
+        } 
+        // Military2013CapitaVisualPick refers to military spending per capita among the countries in 2013.
+
+        function Military2014CapitaVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending Per Capita vs. GDP Per Capita in 2014',
+                hAxis: {title: 'Military Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('military2014_capita_div'));
+            chart.draw(data, options);
+        } 
+        // Military2014CapitaVisualPick
+
+        function Military2015CapitaVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending Per Capita vs. GDP Per Capita in 2015',
+                hAxis: {title: 'Military Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('military2015_capita_div'));
+            chart.draw(data, options);
+        } 
+        // Military2015CapitaVisualPick
+
+        function Military2016CapitaVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending Per Capita vs. GDP Per Capita in 2016',
+                hAxis: {title: 'Military Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12, 
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('military2016_capita_div'));
+            chart.draw(data, options);
+        } 
+        // Military2016CapitaVisualPick
+
+        function Military2017CapitaVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            var options = {
+                title: 'Military Spending Per Capita vs. GDP Per Capita in 2017',
+                hAxis: {title: 'Military Spending Per Capita ($)'},
+                vAxis: {title: 'GDP Per Capita ($)'},
+                bubble: {
+                    textStyle: {fontSize: 12,
+                    auraColor: 'none'
+                    }
+                }
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$'});
+            formatter.format(data,1);
+            formatter.format(data,2);
+            var chart = new google.visualization.BubbleChart(document.getElementById('military2017_capita_div'));
+            chart.draw(data, options);
+        } 
+        // Military2017CapitaVisualPick
+
+        function MilitaryFixedChangeVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#f0e680','#8b8700']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, prefix: '$', suffix: 'B'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('military_fixed_change_div'));
+            chart.draw(data, options);
+        } 
+        // MilitaryFixedChangeVisualPick refers to the change absolute in military spending from 2013 to 2017.
+
+        function MilitaryPctChangeVisualPick(response){
+            ErrorWarning(response);
+            var data = response.getDataTable();
+            data.sort({column: 1});
+            var options = {
+                colorAxis: {colors: ['#ffaa00','#b7410e']},
+                backgroundColor: '#add8e0'
+            };
+            var formatter = new google.visualization.NumberFormat({
+                fractionDigits: 2, suffix: '%'});
+            formatter.format(data,1);
+            var chart = new google.visualization.GeoChart(document.getElementById('military_pct_change_div'));
+            chart.draw(data, options);
+        } 
+        // MilitaryPctChangeVisualPick refers to the change in relative military spending from 2013 to 2017.
+
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="logo_text">
+                    <h1><a href="g20_home.html"></a>The G20: A Military, Educational, and Healthcare Perspective</h1>
+                    <h3></h3>
+                    <h3>DATS 6401 | Joseph Valle</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="menubar">
+            <ul id="menu">
+                <li><a href="g20_home.html">Home</a></li>
+                <li class="selected"><a href="g20_military.html">Military</a></li>
+                <li><a href="g20_education.html">Education</a></li>
+                <li><a href="g20_healthcare.html">Healthcare</a></li>
+                <li><a href="g20_case_study.html">Case Study</a></li>
+                <li><a href="g20_conclusions.html">Conclusions</a></li>
+                <li><a href="g20_references.html">References</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <h1>The G20 Forum and their Militaries from 2013 to 2017</h1>
+            <p>
+                Our visual presentation begins with an analysis of the G20's trends in military spending.
+                One of the conditions for a country to maintain a strong national security is often a potent and innovative defense establishment, whether its bases are at home or abroad.
+                Defense financing remains a high consideration for many nations as they remain on the lookout for any impending threats to their security, as globalization pervades their economic priorities.
+                However, this does not imply that military spending is necessarily a mandatory component of a national budget.
+                In fact, many countries posess wide discretion as to how much funds are allocated toward military development.
+                This takes into consideration the impact of other sectors or programs that may constitute mandatory spending.
+                Nevertheless, even where defense financing is categorized as discretionary, it's not surprising that nations may prioritze it, over other discretionary funding sources, while outlining their budgets.
+            </p>
+            <h2>Analyzing Military Spending Annually and as a Share of GDP</h2>
+            <p>
+                Let's first take a look at the annual shifts in military spending throughout the G20 and calculate each country's mean share of GDP toward defense.
+            </p>
+            <div id="military_spending_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="military_avg_pct_div" style="width: 880px; height:500px;"></div>
+            <p>
+                Right away, we can tell that the US and China spent the most, on average, on their militaries from 2013 to 2017, partly on account of the fact that the two possessed the largest economies in the world over that timespan.
+                When we pivot toward the countries' mean military shares of GDP however, as shown in the orange bar chart, Russia emerged on top at 4.50%, almost a full percentage point ahead of the US.
+                China on the other hand reported the fourth-highest average at 1.90%.
+            </p>
+            <p>
+                Yet, national figures on military spending alone do not tell the whole picture on the ramifications they bring toward their respective economies.
+                To address this, let's now consider the role of population.
+                Using this variable, we can determine the countries' GDPs per capita, and extend our inquiry toward identifiying how much they spent on their militaries per capita.
+                The bubble charts below present the countries' figures for each year within our timespan.
+            </p>
+            <h2>Relationship Between Military Spending Per Capita and GDP Per Capita</h2>
+            <div id="military2013_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="military2014_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="military2015_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="military2016_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <div id="military2017_capita_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <p>
+                Based on the models shown, the diameter of a bubble is affected by the extent of its corresponding country's population, while its color indicates its geographic region.
+                In fact, China was the only country in the G20 to report a population of more than a billion from 2013 to 2017.
+                Furthermore, a notable shift occurs in Australia over our timespan.
+                While it reported a GDP per capita of almost $70,000 early on in 2013, that figure declined to just below $55,000 in 2017, despite its military spending per capita staying relatively stagnant.
+                Additionally, outside of Russia, the other four European countries - France, Germany, Italy, and the UK - posted GDPs per capita of more than $30,000 annually.
+                Yet, they also spent less than $1,000 on their militaries per capita every year.  
+                Japan followed the same trend.
+                Based on this observation, they likely allocated a larger portion of their annual budgets toward other forms of discretionary spending.
+            </p>
+            <h2>Change in Absolute Military Spending across the G20 Forum (2013 - 2017)</h2>
+            <div id="military_fixed_change_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <p>
+                The geographic chart shown above presents the changes in absolute military spending throughout each nation from 2013 to 2017.
+                Only three countries, Australia, China, and South Korea, witnessed a rise in that category over our timespan.
+                In China's case, it reported an increase of $48.59 billion, far surpassing the rest.
+            </p>
+            <h2>Change in Relative Military Spending across the G20 Forum (2013 - 2017)</h2>
+            <div id="military_pct_change_div" style="width: 880px; height:500px;"></div>
+            <br>
+            <p>
+                Darker shades of orange in this geographic chart indicate higher relative rates of military spending, while lighter shades indicate lower rates.
+                When analyzing this, China again comes out on top, at a substantially high 27.01%.
+                With regards to Australia and South Korea, they saw their defense budgets increase by 11.54% and 14.16%, respectively.
+                As an intriguing side note, although Russia reported the highest average share of GDP toward its military over our timespan, its relative rate of spending in that category actually dropped the quickest, at almost a quarter from 2013 to 2017.
+            </p>
+        </div>
+        
+    </div>
+</body>
+
+</html>
